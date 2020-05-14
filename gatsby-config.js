@@ -1,15 +1,51 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `LoginRadius Engineering Blog`,
+
     author: {
       name: `Kyle Mathews`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A collection of loginradius blogs.`,
     social: {
       twitter: `kylemathews`,
     },
+    menuLinks: [
+      {
+        name: 'Home',
+        slug: '/',
+      },
+      {
+        name: 'Resources',
+        slug: '/resources/',
+      },
+      {
+        name: 'Developers',
+        slug: '/identity-experience-framework/',
+      },
+      {
+        name: 'Contact Us',
+        slug: '/contact-sales/',
+      },
+    ],
+    footerLinks: [
+      {
+        name: 'Privacy Policy',
+        slug: '/privacy-policy',
+      },
+      {
+        name: 'Terms',
+        slug: '/terms/',
+      },
+      {
+        name: 'Security Policy',
+        slug: '/security-policy/',
+      },
+      {
+        name: 'Site Map',
+        slug: '/site-map/',
+      },
+    ],
   },
   plugins: [
     {
@@ -66,7 +102,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/lr-icon.ico`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -74,6 +110,26 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    `gatsby-plugin-sass`,
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            path: node => node.frontmatter.path,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) =>
+          node.frontmatter.tags !== 'exempt',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

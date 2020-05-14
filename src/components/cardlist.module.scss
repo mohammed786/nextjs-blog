@@ -1,0 +1,79 @@
+.user {
+  display: flex;
+  margin: 0 auto 12px auto;
+}
+
+.container {
+  padding: 0 10%;
+}
+
+.title {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: rgb(37, 46, 79);
+  box-shadow: none;
+}
+
+.user:last-child {
+  margin-bottom: 0;
+}
+
+.avatar {
+  width: 300px;
+  margin: 0;
+}
+
+.description {
+  flex: 1;
+  margin-left: 18px;
+  padding: 12px;
+}
+
+.tag {
+  a {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #0d8dcf;
+    background-color: #f8f9fc;
+    padding: 8px 16px;
+    border-radius: 0px 8px;
+    margin: 11px 0;
+    width: fit-content;
+  }
+}
+
+.tag-menu {
+  margin: 20px 0;
+
+  a {
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #0d8dcf;
+    background-color: #f8f9fc;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-right: 11px;
+    width: fit-content;
+  }
+}
+
+.description-text {
+  color: rgb(115, 122, 150);
+  font-family: "Graphik Web", BlinkMacSystemFont, -apple-system, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 10px;
+}
+
+.username {
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.excerpt {
+  margin: 0;
+}

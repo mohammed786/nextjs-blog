@@ -1,0 +1,23 @@
+html {
+    font-size: 18px;;
+}
+
+body {
+  color: rgb(115, 122, 150);
+  font-size: 15px;
+
+  font-family: "Graphik Web", BlinkMacSystemFont, -apple-system, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img,
+h1,
+h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+    margin: 1em 0;
+}

@@ -1,0 +1,8 @@
+.text {
+  font-size: 12px;
+  line-height: 1.5em;
+  font-weight: 500;
+  color: rgb(37, 46, 79);
+  flex: 1 1 0%;
+  padding-top: 13px;
+}

@@ -8,10 +8,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styles from "./bio.module.css";
 
 import { rhythm } from "../utils/typography"
 
-const Bio = () => {
+const Bio = ({ date }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -39,8 +40,8 @@ const Bio = () => {
   return (
     <div
       style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
+        margin: "15px 0",
+        display: "flex"
       }}
     >
       <Image
@@ -56,12 +57,10 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+      <p className={styles.text}>
+        Written by <strong>{author.name}</strong>
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        on {date}
       </p>
     </div>
   )
